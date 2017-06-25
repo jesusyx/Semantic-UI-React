@@ -74,9 +74,9 @@ class Tab extends Component {
 
   static Pane = TabPane
 
-  state = {
+  initialState = () => ({
     activeIndex: 0,
-  }
+  })
 
   handleItemClick = (e, { index }) => {
     _.invoke(this.props, 'onTabChange', e, { activeIndex: index, ...this.props })

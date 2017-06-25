@@ -95,14 +95,9 @@ export default class Accordion extends Component {
   static Content = AccordionContent
   static Title = AccordionTitle
 
-  state = {}
-
-  constructor(...args) {
-    super(...args)
-    this.state = {
-      activeIndex: this.props.exclusive ? -1 : [-1],
-    }
-  }
+  initialState = ({ exclusive }) => ({
+    activeIndex: exclusive ? -1 : [-1],
+  })
 
   handleTitleClick = (e, index) => {
     const { onTitleClick, exclusive } = this.props
